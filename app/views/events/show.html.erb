@@ -9,6 +9,9 @@
                 <span class="badge bg-secondary">
                   <%= l @event.held_at.to_date, format: :short %>
                 </span>
+                <% if @event.only_woman? %>
+                  女性限定
+                <% end %>
               </h5>
             </div>
             <h1>
