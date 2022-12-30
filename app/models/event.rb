@@ -14,9 +14,6 @@ class Event < ApplicationRecord
   scope :future, -> { where('held_at > ?', Time.current) }
   scope :past, -> { where('held_at <= ?', Time.current) }
 
-  enum only_woman: { woman: true, man: false }
-  validates :only_woman, inclusion: {in: ["woman", "man"]}
-
   with_options presence: true do
     validates :title
     validates :content
